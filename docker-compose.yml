@@ -1,0 +1,10 @@
+---
+couchpotato:
+    build: .
+    container_name: couchpotato
+    volumes:
+        - ./data/datadir:/datadir
+        - ./data/media:/media
+    restart: always
+    ports:
+        - "5050:5050"
