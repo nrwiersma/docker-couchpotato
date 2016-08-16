@@ -26,11 +26,12 @@ printf "Updating UID / GID... "
 echo "[DONE]"
 
 #
-# Clone CouchPotato to get the latest version
+# Update CouchPotato to the lastest version
 #
 
-printf "Installing CouchPotato... "
-git clone -q https://github.com/CouchPotato/CouchPotatoServer.git .
+printf "Updating CouchPotato... "
+git fetch -q
+git reset -q --hard origin/master
 echo "[DONE]"
 
 #

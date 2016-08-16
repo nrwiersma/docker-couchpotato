@@ -8,7 +8,8 @@ RUN addgroup -S -g 666 couchpotato \
     && adduser -S -u 666 -G couchpotato -h /couchpotato -s /bin/sh couchpotato
 
 # Install Dependencies
-RUN apk add --no-cache ca-certificates py-openssl py-lxml git
+RUN apk add --no-cache ca-certificates py-openssl py-lxml git \
+    && git clone https://github.com/CouchPotato/CouchPotatoServer.git /couchpotato
 
 # Add SickBeard init script.
 ADD entrypoint.sh /entrypoint.sh
